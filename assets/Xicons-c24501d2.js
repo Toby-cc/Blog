@@ -1,0 +1,8 @@
+import{s as g,W as z,K as C,v as m,r as $,u as e,o as l,c,y as S,e as a,a as y,x as N,d as h,t as w,z as V,_ as X}from"./app-4a9060c4.js";import"./Xicons.vue_vue_type_style_index_0_lang-4ed993c7.js";const b=g({__name:"Xicons",props:{icon:{type:String,default:""},iconPosition:{type:String,default:"left"},iconSize:{type:[String,Number],default:18},color:{type:String,default:"inherit"},text:{type:String,default:""},textSize:{type:[String,Number],default:"14"},link:{type:String,default:"javascript:void(0)"},target:{type:String,default:"_self"}},emits:["click"],setup(t,{emit:r}){const o=t,u=z(),{icon:f,iconSize:n,color:i,textSize:v}=C(o);m(()=>({width:`${n.value}px`,height:`${n.value}px`,fontSize:`${n.value}px`,color:i.value}));const x=m(()=>({color:i.value,fontSize:`${v.value}px`})),k=()=>{o.link&&window.open(o.link,o.target),r("click")};return(s,p)=>{const d=$("SvgIcon");return t.link!=="javascript:void(0)"||t.text||e(u).default?(l(),c("span",{key:0,class:V(["xicon-container",t.iconPosition]),onClick:k},[S(s.$slots,"icon",{},()=>[a(` <component\r
+        class="xicon-icon"\r
+        :style="iconStyle"\r
+        :is="icons[icon]"\r
+      /> `),y(d,{name:e(f),size:e(n),color:e(i)},null,8,["name","size","color"])]),t.text||e(u).default?(l(),c("span",{key:0,class:"xicon-content",style:N(x.value)},[S(s.$slots,"default",{},()=>[h(w(t.text),1)])],4)):a("v-if",!0)],2)):(l(),c("span",{key:1,class:"xicon-container",onClick:p[0]||(p[0]=j=>r("click"))},[a(` <component\r
+      :style="iconStyle"\r
+      :is="icons[icon]"\r
+    /> `),y(d,{name:e(f),size:e(n),color:e(i)},null,8,["name","size","color"])]))}}}),P=X(b,[["__file","Xicons.vue"]]);export{P as default};

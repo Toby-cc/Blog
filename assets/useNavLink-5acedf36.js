@@ -1,0 +1,1 @@
+import{D as u,a1 as i,W as d}from"./app-ab9ebd95.js";const n=(...t)=>{const e=u().resolve(...t),s=e.matched[e.matched.length-1];if(!(s!=null&&s.redirect))return e;const{redirect:o}=s,a=i(o)?o(e):o,c=d(a)?{path:a}:a;return n({hash:e.hash,query:e.query,params:e.params,...c})},h=t=>{const r=n(t);return{text:r.meta.title||t,link:r.name==="404"?t:r.fullPath}};export{h as u};

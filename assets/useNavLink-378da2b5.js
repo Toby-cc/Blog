@@ -1,1 +1,0 @@
-import{R as u,X as i,V as d}from"./app-4a9060c4.js";const a=(...t)=>{const e=u().resolve(...t),s=e.matched[e.matched.length-1];if(!(s!=null&&s.redirect))return e;const{redirect:o}=s,n=i(o)?o(e):o,c=d(n)?{path:n}:n;return a({hash:e.hash,query:e.query,params:e.params,...c})},h=t=>{const r=a(t);return{text:r.meta.title||t,link:r.name==="404"?t:r.fullPath}};export{h as u};

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.62">
+    <script>
+      (function() {
+        const userMode = localStorage.getItem('vuepress-reco-color-scheme') || 'auto';
+        const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (userMode === 'dark' || (userMode === 'auto' && systemDarkMode)) {
+          document.documentElement.classList.toggle('dark', true);
+        }
+      })();
+    </script>
+    <link rel="icon" href="https://toby607-1317049696.cos.ap-guangzhou.myqcloud.com/images/202303201032565.ico"><script type="module" async src="//at.alicdn.com/t/c/font_3933848_4wndnsa5a06.js"></script><meta name="referrer" content="never"><meta name="keywords" content="Toby的学习基地,Toby的博客,Toby,toby,博客"><meta name="description" content="这是Toby的个人博客,个人空间随便写写，日常积累。"><title>从零开始的 Vuepress2.X (二) | Toby的学习基地</title>
+    <link rel="modulepreload" href="/blogs/assets/app-7f713c0e.js"><link rel="modulepreload" href="/blogs/assets/index.html-d78e650e.js"><link rel="modulepreload" href="/blogs/assets/index.html-b591761d.js"><link rel="prefetch" href="/blogs/assets/index.html-6d5e9dd3.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-8c2edf06.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-f9d6c749.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-9708e883.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-23a99e15.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-b07f8737.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-ce297873.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-5d086f3a.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-a3823cc8.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-bad9c8e7.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-feb764f9.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-848a771c.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-fcfcff54.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-c4c9cace.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-9b5d889a.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-6cf06f14.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-1a88d37b.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-c8e98ed0.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-ce7da0e7.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-118d9dc4.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-330a6b6c.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-772012ff.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-d8c5cf20.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-abbf82eb.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-0eaad3ca.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-4f5b2479.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-d66d7905.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-4732d3d0.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-717beacb.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-3e1b931f.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-4e6d1bac.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-f1ef6195.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-d6ec59df.js" as="script"><link rel="prefetch" href="/blogs/assets/arrayAPI.html-00d98e82.js" as="script"><link rel="prefetch" href="/blogs/assets/ECMAScript.html-51b5aabe.js" as="script"><link rel="prefetch" href="/blogs/assets/git.html-50260250.js" as="script"><link rel="prefetch" href="/blogs/assets/higherOrderFun.html-895fdb46.js" as="script"><link rel="prefetch" href="/blogs/assets/resource.html-ccc1a504.js" as="script"><link rel="prefetch" href="/blogs/assets/v-html.html-dd0950aa.js" as="script"><link rel="prefetch" href="/blogs/assets/windowOpen.html-02601a3b.js" as="script"><link rel="prefetch" href="/blogs/assets/404.html-60b35caa.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-4811c966.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-da32e680.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-c1952521.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-1143ee14.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-d1d03cf4.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-3a272f7a.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-98808d4a.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-b3907a2b.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-658d4cca.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-eedc7c7f.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-547382e8.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-8049a9df.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-830209f4.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-66665405.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-40f6cff0.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-f646bbb4.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-e7f4f3f4.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-f3a9c743.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-0ccb60f3.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-16975a0a.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-3cbb442d.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-7dcea9b9.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-7be523e8.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-68e60ba8.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-7e586504.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-aa2c0090.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-825f1427.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-b2e67e9e.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-a4bd69cb.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-1654dcc4.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-5cd78954.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-ccc56c77.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-1890b69e.js" as="script"><link rel="prefetch" href="/blogs/assets/arrayAPI.html-98caff7f.js" as="script"><link rel="prefetch" href="/blogs/assets/ECMAScript.html-0c16c33f.js" as="script"><link rel="prefetch" href="/blogs/assets/git.html-d02b6ebf.js" as="script"><link rel="prefetch" href="/blogs/assets/higherOrderFun.html-ee0aa833.js" as="script"><link rel="prefetch" href="/blogs/assets/resource.html-58258882.js" as="script"><link rel="prefetch" href="/blogs/assets/v-html.html-7cca104a.js" as="script"><link rel="prefetch" href="/blogs/assets/windowOpen.html-f4026fd6.js" as="script"><link rel="prefetch" href="/blogs/assets/404.html-9e68fae6.js" as="script"><link rel="prefetch" href="/blogs/assets/reco-valine-994c873b.js" as="script"><link rel="prefetch" href="/blogs/assets/giscus-a53917f0-fbc3188d.js" as="script"><link rel="prefetch" href="/blogs/assets/CartesianProduct-83450434.js" as="script"><link rel="prefetch" href="/blogs/assets/contrastPicture-39e118ba.js" as="script"><link rel="prefetch" href="/blogs/assets/DynamicBorder-a47f5058.js" as="script"><link rel="prefetch" href="/blogs/assets/FallsFlow-7638a501.js" as="script"><link rel="prefetch" href="/blogs/assets/meteor-7f0a370a.js" as="script"><link rel="prefetch" href="/blogs/assets/ScratchTicket-80672de5.js" as="script"><link rel="prefetch" href="/blogs/assets/SvgIcon-dd265be1.js" as="script"><link rel="prefetch" href="/blogs/assets/Timeline-bb3bc772.js" as="script"><link rel="prefetch" href="/blogs/assets/Catalog-6f41b562.js" as="script"><link rel="prefetch" href="/blogs/assets/DropdownLink-e1ddfcc1.js" as="script"><link rel="prefetch" href="/blogs/assets/DropdownTransition-f51caa34.js" as="script"><link rel="prefetch" href="/blogs/assets/Link-1f06130a.js" as="script"><link rel="prefetch" href="/blogs/assets/Navbar-1d3454e0.js" as="script"><link rel="prefetch" href="/blogs/assets/NavbarDropdownNemu-2deaa980.js" as="script"><link rel="prefetch" href="/blogs/assets/NavbarLinks-c4dc7ef4.js" as="script"><link rel="prefetch" href="/blogs/assets/Pagation-3e360e70.js" as="script"><link rel="prefetch" href="/blogs/assets/PageInfo-e70fc43e.js" as="script"><link rel="prefetch" href="/blogs/assets/PageMeta-c3907c03.js" as="script"><link rel="prefetch" href="/blogs/assets/PageNav-fea0933b.js" as="script"><link rel="prefetch" href="/blogs/assets/PersonalInfo-75902a8b.js" as="script"><link rel="prefetch" href="/blogs/assets/PostItem-9595532f.js" as="script"><link rel="prefetch" href="/blogs/assets/PostList-064469f0.js" as="script"><link rel="prefetch" href="/blogs/assets/Series-0fc624ff.js" as="script"><link rel="prefetch" href="/blogs/assets/SiteBrand-7371c9af.js" as="script"><link rel="prefetch" href="/blogs/assets/ToggleDarkModeButton-13af3a39.js" as="script"><link rel="prefetch" href="/blogs/assets/ToggleSeriesButton-d2755b00.js" as="script"><link rel="prefetch" href="/blogs/assets/Categories-845349a7.js" as="script"><link rel="prefetch" href="/blogs/assets/Layout-e67719a2.js" as="script"><link rel="prefetch" href="/blogs/assets/NotFound-3536d80f.js" as="script"><link rel="prefetch" href="/blogs/assets/Post-5657b95f.js" as="script"><link rel="prefetch" href="/blogs/assets/Timeline-32e78fab.js" as="script"><link rel="prefetch" href="/blogs/assets/index-2540d693.js" as="script"><link rel="prefetch" href="/blogs/assets/index-9eb2bf8f.js" as="script"><link rel="prefetch" href="/blogs/assets/Badge-23850b08.js" as="script"><link rel="prefetch" href="/blogs/assets/CodeGroup-13927dfd.js" as="script"><link rel="prefetch" href="/blogs/assets/CodeGroupItem-b536be57.js" as="script"><link rel="prefetch" href="/blogs/assets/Tab-f48259e5.js" as="script"><link rel="prefetch" href="/blogs/assets/TabItem-8380ba8b.js" as="script"><link rel="prefetch" href="/blogs/assets/VuePreview-ddf1a566.js" as="script"><link rel="prefetch" href="/blogs/assets/Xicons-2a5c0d59.js" as="script"><link rel="prefetch" href="/blogs/assets/Banner-365f42f8.js" as="script"><link rel="prefetch" href="/blogs/assets/BannerBrand-aafbcf20.js" as="script"><link rel="prefetch" href="/blogs/assets/Blog-6e72e00b.js" as="script"><link rel="prefetch" href="/blogs/assets/Footer-5df7fc41.js" as="script"><link rel="prefetch" href="/blogs/assets/index-9815ed5b.js" as="script"><link rel="prefetch" href="/blogs/assets/MdContent-5a014ae4.js" as="script"><link rel="prefetch" href="/blogs/assets/index-fedaea64.js" as="script"><link rel="prefetch" href="/blogs/assets/index-3dd3adf6.js" as="script"><link rel="prefetch" href="/blogs/assets/Tab-b5f033cc.js" as="script"><link rel="prefetch" href="/blogs/assets/TabItem-ba0eabd1.js" as="script">
+    <link rel="preload" href="/blogs/assets/style-08090b07.css" as="style"><link rel="stylesheet" href="/blogs/assets/style-08090b07.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><div class="common-wrapper series--no show-catalog"><div><header class="navbar-container"><!--[--><div class="site-brand nav-item"><!----><a href="/blogs/" class="site-name">Toby的学习基地</a></div><div class="nav-item navbar-links-wrapper" style=""><form class="search-box" role="search"><input type="search" autocomplete="off" spellcheck="false" value><!----></form><nav class="navbar-links"><!--[--><div class="navbar-links__item"><a href="/blogs/" class="link router-link-active" aria-label="首页"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-shouye2" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-shouye2"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->首页<!--]--></span></span><!--[--><!--]--></a></div><div class="navbar-links__item"><a href="/blogs/categories/js/1/" class="link" aria-label="分类"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-fenlei" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-fenlei"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->分类<!--]--></span></span><!--[--><!--]--></a></div><div class="navbar-links__item"><a href="/blogs/tags/fenxiang/1/" class="link" aria-label="标签"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-24gl-tags3" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-24gl-tags3"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->标签<!--]--></span></span><!--[--><!--]--></a></div><div class="navbar-links__item"><div class="dropdown-link"><button class="dropdown-link__title" type="button" aria-label="笔记"><span class="xicon-container left title"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-bianjibijishishouxie" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-bianjibijishishouxie"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->笔记<!--]--></span></span><span class="arrow down"></span></button><button class="dropdown-link--mobile__title" type="button" aria-label="笔记"><span class="title"><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-bianjibijishishouxie" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-bianjibijishishouxie"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->笔记<!--]--></span></span></span><span class="right arrow"></span></button><ul style="display:none;" class="dropdown-link__container"><!--[--><li class="dropdown-link__item"><a href="/blogs/docs/ECMAScript/" class="link" aria-label="ES 新特性"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->ES 新特性<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/higherOrderFun/" class="link" aria-label="高阶函数的使用"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->高阶函数的使用<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/v-html/" class="link" aria-label="v-html 指令"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->v-html 指令<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/windowOpen/" class="link" aria-label="谈谈 window.open()"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->谈谈 window.open()<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/arrayAPI/" class="link" aria-label="JS中数组API总结"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->JS中数组API总结<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/resource/" class="link" aria-label="资源导航"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->资源导航<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/git/" class="link" aria-label="git 常用命令大全"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->git 常用命令大全<!--]--></span></span><!--[--><!--]--></a></li><!--]--></ul></div></div><!--]--></nav><span class="xicon-container btn-toggle-dark-mode btn--dark-mode"><!-- <component
+      :style="iconStyle"
+      :is="icons[icon]"
+    /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="xicon-icon T-icon" style="font-size:20px;color:inherit;width:20px;height:20px;"><path d="M15 2h2v3h-2z" fill="currentColor"></path><path d="M27 15h3v2h-3z" fill="currentColor"></path><path d="M15 27h2v3h-2z" fill="currentColor"></path><path d="M2 15h3v2H2z" fill="currentColor"></path><path d="M5.45 6.884l1.414-1.415l2.121 2.122l-1.414 1.414z" fill="currentColor"></path><path d="M23 7.58l2.121-2.12l1.414 1.414l-2.121 2.121z" fill="currentColor"></path><path d="M23.002 24.416l1.415-1.414l2.12 2.122l-1.413 1.414z" fill="currentColor"></path><path d="M5.47 25.13L7.59 23L9 24.42l-2.12 2.12l-1.41-1.41z" fill="currentColor"></path><path d="M16 8a8 8 0 1 0 8 8a8 8 0 0 0-8-8zm0 14a6 6 0 0 1 0-12z" fill="currentColor"></path></svg><!--]--><!--]--></span><span class="xicon-container btn-toggle-menus"><!-- <component
+      :style="iconStyle"
+      :is="icons[icon]"
+    /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="xicon-icon T-icon" style="font-size:20px;color:inherit;width:20px;height:20px;"><circle cx="16" cy="8" r="2" fill="currentColor"></circle><circle cx="16" cy="16" r="2" fill="currentColor"></circle><circle cx="16" cy="24" r="2" fill="currentColor"></circle></svg><!--]--><!--]--></span></div><!--]--></header><!----><div class="mobile-menus-container"><nav class="navbar-links mobile"><!--[--><div class="navbar-links__item"><a href="/blogs/" class="link router-link-active" aria-label="首页"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-shouye2" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-shouye2"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->首页<!--]--></span></span><!--[--><!--]--></a></div><div class="navbar-links__item"><a href="/blogs/categories/js/1/" class="link" aria-label="分类"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-fenlei" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-fenlei"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->分类<!--]--></span></span><!--[--><!--]--></a></div><div class="navbar-links__item"><a href="/blogs/tags/fenxiang/1/" class="link" aria-label="标签"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-24gl-tags3" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-24gl-tags3"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->标签<!--]--></span></span><!--[--><!--]--></a></div><div class="navbar-links__item"><div class="dropdown-link"><button class="dropdown-link__title" type="button" aria-label="笔记"><span class="xicon-container left title"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-bianjibijishishouxie" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-bianjibijishishouxie"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->笔记<!--]--></span></span><span class="arrow down"></span></button><button class="dropdown-link--mobile__title" type="button" aria-label="笔记"><span class="title"><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-bianjibijishishouxie" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-bianjibijishishouxie"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->笔记<!--]--></span></span></span><span class="right arrow"></span></button><ul style="display:none;" class="dropdown-link__container"><!--[--><li class="dropdown-link__item"><a href="/blogs/docs/ECMAScript/" class="link" aria-label="ES 新特性"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->ES 新特性<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/higherOrderFun/" class="link" aria-label="高阶函数的使用"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->高阶函数的使用<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/v-html/" class="link" aria-label="v-html 指令"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->v-html 指令<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/windowOpen/" class="link" aria-label="谈谈 window.open()"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->谈谈 window.open()<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/arrayAPI/" class="link" aria-label="JS中数组API总结"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->JS中数组API总结<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/resource/" class="link" aria-label="资源导航"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->资源导航<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/git/" class="link" aria-label="git 常用命令大全"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->git 常用命令大全<!--]--></span></span><!--[--><!--]--></a></li><!--]--></ul></div></div><!--]--></nav><div class="appearance"><span>Appearance</span><span class="xicon-container btn-toggle-dark-mode"><!-- <component
+      :style="iconStyle"
+      :is="icons[icon]"
+    /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="xicon-icon T-icon" style="font-size:20px;color:inherit;width:20px;height:20px;"><path d="M15 2h2v3h-2z" fill="currentColor"></path><path d="M27 15h3v2h-3z" fill="currentColor"></path><path d="M15 27h2v3h-2z" fill="currentColor"></path><path d="M2 15h3v2H2z" fill="currentColor"></path><path d="M5.45 6.884l1.414-1.415l2.121 2.122l-1.414 1.414z" fill="currentColor"></path><path d="M23 7.58l2.121-2.12l1.414 1.414l-2.121 2.121z" fill="currentColor"></path><path d="M23.002 24.416l1.415-1.414l2.12 2.122l-1.413 1.414z" fill="currentColor"></path><path d="M5.47 25.13L7.59 23L9 24.42l-2.12 2.12l-1.41-1.41z" fill="currentColor"></path><path d="M16 8a8 8 0 1 0 8 8a8 8 0 0 0-8-8zm0 14a6 6 0 0 1 0-12z" fill="currentColor"></path></svg><!--]--><!--]--></span></div></div><div class="series-mask"></div><aside class="series-container"><div class="site-brand"><!----><a href="/blogs/" class="site-name">Toby的学习基地</a></div><!--[--><!--]--></aside><!--[--><main class="page-container"><div class="page-card"><h1 class="page-title">从零开始的 Vuepress2.X (二)</h1><div class="page-info"><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="xicon-icon T-icon" style="font-size:18px;color:inherit;width:18px;height:18px;"><path d="M16 4a5 5 0 1 1-5 5a5 5 0 0 1 5-5m0-2a7 7 0 1 0 7 7a7 7 0 0 0-7-7z" fill="currentColor"></path><path d="M26 30h-2v-5a5 5 0 0 0-5-5h-6a5 5 0 0 0-5 5v5H6v-5a7 7 0 0 1 7-7h6a7 7 0 0 1 7 7z" fill="currentColor"></path></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->Toby<!--]--></span></span><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="xicon-icon T-icon" style="font-size:18px;color:inherit;width:18px;height:18px;"><path d="M26 4h-4V2h-2v2h-8V2h-2v2H6c-1.1 0-2 .9-2 2v20c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 22H6V12h20v14zm0-16H6V6h4v2h2V6h8v2h2V6h4v4z" fill="currentColor"></path></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->2023/3/21<!--]--></span></span><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="xicon-icon T-icon" style="font-size:18px;color:inherit;width:18px;height:18px;"><path d="M11.17 6l3.42 3.41l.58.59H28v16H4V6h7.17m0-2H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2H16l-3.41-3.41A2 2 0 0 0 11.17 4z" fill="currentColor"></path></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->Vue<!--]--></span></span><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="xicon-icon T-icon" style="font-size:18px;color:inherit;width:18px;height:18px;"><path d="M10 14a4 4 0 1 1 4-4a4.005 4.005 0 0 1-4 4zm0-6a2 2 0 1 0 1.998 2.004A2.002 2.002 0 0 0 10 8z" fill="currentColor"></path><path d="M16.644 29.415L2.586 15.354A2 2 0 0 1 2 13.941V4a2 2 0 0 1 2-2h9.941a2 2 0 0 1 1.414.586l14.06 14.058a2 2 0 0 1 0 2.828l-9.943 9.943a2 2 0 0 1-2.829 0zM4 4v9.942L18.058 28L28 18.058L13.942 4z" fill="currentColor"></path></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->Vuepress2.X<!--]--></span></span><span class="xicon-container left"><!--[--><svg class="xicon-icon" style="width:18px;height:18px;font-size:18px;color:inherit;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 12 12"><g fill="none"><path d="M1.974 6.659a.5.5 0 0 1-.948-.317c-.01.03 0-.001 0-.001a1.633 1.633 0 0 1 .062-.162c.04-.095.099-.226.18-.381c.165-.31.422-.723.801-1.136C2.834 3.827 4.087 3 6 3c1.913 0 3.166.827 3.931 1.662a5.479 5.479 0 0 1 .98 1.517l.046.113c.003.008.013.06.023.11L11 6.5s.084.333-.342.474a.5.5 0 0 1-.632-.314v-.003l-.006-.016a3.678 3.678 0 0 0-.172-.376a4.477 4.477 0 0 0-.654-.927C8.584 4.673 7.587 4 6 4s-2.584.673-3.194 1.338a4.477 4.477 0 0 0-.795 1.225a2.209 2.209 0 0 0-.03.078l-.007.018zM6 5a2 2 0 1 0 0 4a2 2 0 0 0 0-4zM5 7a1 1 0 1 1 2 0a1 1 0 0 1-2 0z" fill="currentColor"></path></g></svg><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[--><span id="/blogs/vuepress_2/" class="leancloud-visitors" data-flag-title="Your Article Title"><a class="leancloud-visitors-count" style=""></a></span><!----><!--]--></span></span></div><div class="theme-reco-default-content"><!--[--><blockquote class="blockquote">（二）使用社区主题美化Vuepress <!----></blockquote><p align="center"><img width="500"></p><div><div class="el-collapse" role="tablist" aria-multiselectable="true"><!--[--><div class="el-collapse-item catalogue"><div role="tab" aria-expanded="false" aria-controls="el-collapse-content-2319" aria-describedby="el-collapse-content-2319"><div id="el-collapse-head-2319" class="el-collapse-item__header" role="button" tabindex="0"><!--[--><span>目录</span><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-a-22" style="
+      font-size: 20px;
+      color: undefined;
+      width: 20px;
+      height: 20px;
+    " aria-hidden="true"><use xlink:href="#T-a-22"></use></svg><!--]--><!--]--><!--]--><i class="el-icon el-collapse-item__arrow" style=""><!--[--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg><!--]--></i></div></div><div id="el-collapse-content-2319" class="el-collapse-item__wrap" role="tabpanel" aria-hidden="true" aria-labelledby="el-collapse-head-2319" style="display:none;"><div class="el-collapse-item__content"><!--[--><div class="catalogue-content"><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-jiantou_xiangyouliangci" style="
+      font-size: 20px;
+      color: undefined;
+      width: 20px;
+      height: 20px;
+    " aria-hidden="true"><use xlink:href="#T-jiantou_xiangyouliangci"></use></svg><!--]--><!--]--><a href="/blogs/vuepress_1/" class="">(1) 搭建Vuepress项目</a><br><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-dangqianweizhi" style="
+      font-size: 20px;
+      color: undefined;
+      width: 20px;
+      height: 20px;
+    " aria-hidden="true"><use xlink:href="#T-dangqianweizhi"></use></svg><!--]--><!--]--><a aria-current="page" href="/blogs/vuepress_2/" class="router-link-active router-link-exact-active">(2) 使用社区主题和插件</a><br><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-jiantou_xiangyouliangci" style="
+      font-size: 20px;
+      color: undefined;
+      width: 20px;
+      height: 20px;
+    " aria-hidden="true"><use xlink:href="#T-jiantou_xiangyouliangci"></use></svg><!--]--><!--]--><a href="/blogs/vuepress_3/" class="">(3) 使用 Element-Plus 组件库</a><br><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-jiantou_xiangyouliangci" style="
+      font-size: 20px;
+      color: undefined;
+      width: 20px;
+      height: 20px;
+    " aria-hidden="true"><use xlink:href="#T-jiantou_xiangyouliangci"></use></svg><!--]--><!--]--><a href="/blogs/vuepress_4/" class="">(4) 使用阿里巴巴图标</a><br><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-jiantou_xiangyouliangci" style="
+      font-size: 20px;
+      color: undefined;
+      width: 20px;
+      height: 20px;
+    " aria-hidden="true"><use xlink:href="#T-jiantou_xiangyouliangci"></use></svg><!--]--><!--]--><a href="/blogs/vuepress_5/" class="">(5) 部署 VuePress</a><br></div><!--]--></div></div></div><!--]--></div><div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">前言</p><p>前面我们已经实现了博客的基本功能<br> 不过如果想要博客更丰富一点，我们就要加入主题和插件</p></div><h2 id="_1、加入主题" tabindex="-1"><a class="header-anchor" href="#_1、加入主题" aria-hidden="true">#</a> 1、加入主题</h2><blockquote><p>我使用的主题是 <a href="http://v2.vuepress-reco.recoluan.com/" target="_blank" rel="noopener noreferrer">vuepress-theme-reco<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>，一款简洁的 vuepress 博客 &amp; 文档 主题。</p></blockquote><h3 id="_1-1-安装主题" tabindex="-1"><a class="header-anchor" href="#_1-1-安装主题" aria-hidden="true">#</a> 1.1 安装主题</h3><div class="code-group"><div class="code-group__nav"><ul class="code-group__ul"><li class="code-group__li"><button class="code-group__nav-tab code-group__nav-tab-active" ariapressed="true" ariaexpanded="true"><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="xicon-icon T-icon" style="font-size:18px;color:inherit;width:18px;height:18px;"><path d="M31 16l-7 7l-1.41-1.41L28.17 16l-5.58-5.59L24 9l7 7z" fill="currentColor"></path><path d="M1 16l7-7l1.41 1.41L3.83 16l5.58 5.59L8 23l-7-7z" fill="currentColor"></path><path d="M12.419 25.484L17.639 6l1.932.518L14.35 26z" fill="currentColor"></path></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->YARN<!--]--></span></span></button></li><li class="code-group__li"><button class="code-group__nav-tab" ariapressed="false" ariaexpanded="false"><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="xicon-icon T-icon" style="font-size:18px;color:inherit;width:18px;height:18px;"><path d="M31 16l-7 7l-1.41-1.41L28.17 16l-5.58-5.59L24 9l7 7z" fill="currentColor"></path><path d="M1 16l7-7l1.41 1.41L3.83 16l5.58 5.59L8 23l-7-7z" fill="currentColor"></path><path d="M12.419 25.484L17.639 6l1.932.518L14.35 26z" fill="currentColor"></path></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->NPM<!--]--></span></span></button></li></ul></div><!--[--><div class="code-group-item" aria-selected="false"><!--[--><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> vuepress@next vuepress-theme-reco@next
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><!--]--></div><div class="code-group-item" aria-selected="false"><!--[--><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">npm</span> <span class="token function">install</span> vuepress@next vuepress-theme-reco@next --save-dev
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><!--]--></div><!--]--></div><h3 id="_1-2-引入主题" tabindex="-1"><a class="header-anchor" href="#_1-2-引入主题" aria-hidden="true">#</a> 1.2 引入主题</h3><blockquote><p>主题增加了许多丰富的元素<br> Vuepress原有的配置除了把 左侧边栏（sideBar） 被更改为 系列（series）外，其他的配置都没有变化</p></blockquote><p>在.vuepress/config.ts 下引入主题</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">import</span> <span class="token punctuation">{</span> recoTheme <span class="token punctuation">}</span> from <span class="token string">&#39;vuepress-theme-reco&#39;</span>
+
+
+<span class="token builtin class-name">export</span> default <span class="token punctuation">{</span>
+  theme: recoTheme<span class="token punctuation">(</span><span class="token punctuation">{</span>
+    logo: <span class="token string">&#39;&#39;</span>, // 导航栏头像
+    author: <span class="token string">&quot;Toby&quot;</span>, // 博客主人的名字
+    authorAvatar: <span class="token string">&quot;&quot;</span>, // 博客主人的头像
+    primaryColor: <span class="token string">&#39;#3aa675&#39;</span>, // 自定义主题的基础色
+    navbar: <span class="token punctuation">[</span><span class="token punctuation">]</span>, // <span class="token function">head</span> 标签
+    series: <span class="token punctuation">[</span><span class="token punctuation">]</span>, // 侧边栏
+    catalogTitle: <span class="token string">&#39;自定义文档目录标题&#39;</span>,
+    algolia: <span class="token punctuation">{</span><span class="token punctuation">}</span>, // 搜索功能
+    bulletin: <span class="token punctuation">{</span><span class="token punctuation">}</span> // 公告
+    valineConfig: <span class="token punctuation">{</span><span class="token punctuation">}</span>, // 评论
+    <span class="token punctuation">..</span>.
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="skulls" data-v-eea7969f><!--[--> 更多配置可参考 <a class="el-link el-link--default is-underline" href="http://v2.vuepress-reco.recoluan.com/theme/frontmatter-home.html" target="_blank"><!--v-if--><span class="el-link__inner"><!--[-->vuepress-reco主题配置<!--]--></span><!--v-if--></a><!--]--></div><h3 id="_1-3-效果" tabindex="-1"><a class="header-anchor" href="#_1-3-效果" aria-hidden="true">#</a> 1.3 效果</h3><div class="el-carousel el-carousel--horizontal el-carousel--card"><div class="el-carousel__container" style="height:;"><button type="button" class="el-carousel__arrow el-carousel__arrow--left" style="display:none;"><i class="el-icon" style=""><!--[--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M609.408 149.376 277.76 489.6a32 32 0 0 0 0 44.672l331.648 340.352a29.12 29.12 0 0 0 41.728 0 30.592 30.592 0 0 0 0-42.752L339.264 511.936l311.872-319.872a30.592 30.592 0 0 0 0-42.688 29.12 29.12 0 0 0-41.728 0z"></path></svg><!--]--></i></button><button type="button" class="el-carousel__arrow el-carousel__arrow--right" style="display:none;"><i class="el-icon" style=""><!--[--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512 340.864 831.872a30.592 30.592 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"></path></svg><!--]--></i></button><!--[--><div class="el-carousel__item el-carousel__item--card" style="transform:translateX(0px) scale(1);display:none;"><div class="el-carousel__mask"></div><!--[--><div class="el-image imageBorder" style="height:100%;"><!--[--><!--v-if--><div class="el-image__wrapper"><!--[--><div class="el-image__placeholder"></div><!--]--></div><!--]--><!--v-if--></div><!--]--></div><div class="el-carousel__item el-carousel__item--card" style="transform:translateX(0px) scale(1);display:none;"><div class="el-carousel__mask"></div><!--[--><div class="el-image imageBorder" style="height:100%;"><!--[--><!--v-if--><div class="el-image__wrapper"><!--[--><div class="el-image__placeholder"></div><!--]--></div><!--]--><!--v-if--></div><!--]--></div><div class="el-carousel__item el-carousel__item--card" style="transform:translateX(0px) scale(1);display:none;"><div class="el-carousel__mask"></div><!--[--><div class="el-image imageBorder" style="height:100%;"><!--[--><!--v-if--><div class="el-image__wrapper"><!--[--><div class="el-image__placeholder"></div><!--]--></div><!--]--><!--v-if--></div><!--]--></div><!--]--></div><ul class="el-carousel__indicators el-carousel__indicators--horizontal"><!--[--><!--]--></ul></div><h3 id="_1-4-其他" tabindex="-1"><a class="header-anchor" href="#_1-4-其他" aria-hidden="true">#</a> 1.4 其他</h3><p>除了 <a href="http://v2.vuepress-reco.recoluan.com/" target="_blank" rel="noopener noreferrer">vuepress-theme-reco<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a> 这个主题，还有 <a href="https://theme-hope.vuejs.press/zh/" target="_blank" rel="noopener noreferrer">vuepress-theme-hope<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a> 也是个不错的主题。除此之外还有其他的一些主题，或者也可以通过自定义<a href="https://v2.vuepress.vuejs.org/zh/advanced/theme.html" target="_blank" rel="noopener noreferrer">开发自己的主题<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>，有兴趣的小伙伴可以自己去研究一下。</p><h2 id="_2、使用插件" tabindex="-1"><a class="header-anchor" href="#_2、使用插件" aria-hidden="true">#</a> 2、使用插件</h2><div class="custom-container tip"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg><p class="custom-container-title">TIP</p><p>VuePress 插件可以为你提供各种不同的功能。<br> 社区用户创建了很多插件，并将它们发布到了 <a href="https://www.npmjs.com/search?q=keywords:vuepress-plugin" target="_blank" rel="noopener noreferrer">NPM<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a> 上。<br> VuePress 团队也在 <a href="https://www.npmjs.com/search?q=%40vuepress%20keywords%3Aplugin" target="_blank" rel="noopener noreferrer">@vuepress<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a> Scope 下维护了一些官方插件。<br> 或者也可以自定义<a href="https://v2.vuepress.vuejs.org/zh/advanced/plugin.html" target="_blank" rel="noopener noreferrer">开发自己的插件<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p></div><blockquote><p>插件有两种</p></blockquote><h3 id="_2-1-插件的引入方法-一" tabindex="-1"><a class="header-anchor" href="#_2-1-插件的引入方法-一" aria-hidden="true">#</a> 2.1 插件的引入方法(一)</h3><p>可以导入插件并通过配置文件的 plugins 配置项来使用它。</p><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token comment">// .vuepress/config.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> googleAnalyticsPlugin <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;@vuepress/plugin-google-analytics&#39;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token function">googleAnalyticsPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">&#39;G-XXXXXXXXXX&#39;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-2-插件的引入方法-二" tabindex="-1"><a class="header-anchor" href="#_2-2-插件的引入方法-二" aria-hidden="true">#</a> 2.2 插件的引入方法(二)</h3><p>配置客户端文件client.{js,ts} <br> 在.vuepress中新建 client 文件</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>├─ .vuepress
+│  └─ client.js  <span class="token operator">&lt;</span>--- 客户端配置文件
+│  └─ config.js  <span class="token operator">&lt;</span>--- 配置文件
+│
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token comment">// .vuepress/client.js</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> defineClientConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;@vuepress/client&#39;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineClientConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// 挂载Vue实例</span>
+  <span class="token function">enhance</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> app<span class="token punctuation">,</span> router<span class="token punctuation">,</span> siteData <span class="token punctuation">}</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 根组件的 setup</span>
+  <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 全局的 UI 组件数组</span>
+  <span class="token literal-property property">rootComponents</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-3-实例" tabindex="-1"><a class="header-anchor" href="#_2-3-实例" aria-hidden="true">#</a> 2.3 实例</h3><p>在 .vuepress/components 下有个名为 Demo.vue 的组件</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>├─ .vuepress
+│  └─ components  <span class="token operator">&lt;</span>--- 用于存放 vue 组件
+│     └─ Demo.vue  
+│
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="custom-container warning"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></g></svg><p class="custom-container-title">WARNING</p><p>因为在该目录下的文件不会被自动注册为 Vue 组件。<br> 所以如果我想在 Markdown 里面引入 Demo 组件 <!--[--><!-- 饿了么图标 --><i class="el-icon T-icon ele-Bottom" style="font-size:20px;color:undefined;width:20px;height:20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M544 805.888V168a32 32 0 1 0-64 0v637.888L246.656 557.952a30.72 30.72 0 0 0-45.312 0 35.52 35.52 0 0 0 0 48.064l288 306.048a30.72 30.72 0 0 0 45.312 0l288-306.048a35.52 35.52 0 0 0 0-48 30.72 30.72 0 0 0-45.312 0L544 805.824z"></path></svg></i><!--]--><br></p></div><ul><li>(1) 可以在 plugins 引入:</li></ul><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token comment">// .vuepress/config.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> registerComponentsPlugin <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;@vuepress/plugin-register-components&#39;</span> <span class="token comment">// 导入组件库</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getDirname<span class="token punctuation">,</span>path <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;@vuepress/utils&#39;</span>
+<span class="token keyword">const</span> __dirname <span class="token operator">=</span> <span class="token function">getDirname</span><span class="token punctuation">(</span><span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token function">registerComponentsPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token comment">// 配置项</span>
+      <span class="token comment">// 挂载 .vuepress/components 下所有vue组件</span>
+      <span class="token literal-property property">componentsDir</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&#39;./components&#39;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>(2) 可以在 client 中配置</li></ul><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token comment">// .vuepress/config.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> defineClientConfig  <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;@vuepress/client&#39;</span><span class="token comment">// 导入组件库</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> onMounted <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;vue&#39;</span>
+<span class="token keyword">import</span> Demo <span class="token keyword">from</span> <span class="token string">&#39;./components/Demo.vue&#39;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineClientConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// 挂载Vue实例</span>
+  <span class="token function">enhance</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> app<span class="token punctuation">,</span> router<span class="token punctuation">,</span> siteData <span class="token punctuation">}</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 注册 Demo 实例</span>
+    app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">&#39;Demo&#39;</span><span class="token punctuation">,</span> Demo<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 根组件的 setup</span>
+  <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">onMounted</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&#39;click&#39;</span><span class="token punctuation">,</span> <span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;点击事件&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 全局的 UI 组件数组</span>
+  <span class="token literal-property property">rootComponents</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// 挂载 Demo 全局组件</span>
+    <span class="token comment">// Demo</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在 docs/test2 中使用 Demo 组件</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>---
+title: test2
+date: <span class="token number">2023</span>/3/1
+tags:
+  - css
+categories:
+  - 测试组件
+---
+
+<span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>我是test<span class="token operator"><span class="token file-descriptor important">2</span>&lt;</span>/div<span class="token operator">&gt;</span>
+我引入了：
+<span class="token operator">&lt;</span>Demo<span class="token operator">&gt;</span><span class="token operator">&lt;</span>/Demo<span class="token operator">&gt;</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>看看效果：</p><p align="center"><img width="500" class="imageBorder" src="https://toby607-1317049696.cos.ap-guangzhou.myqcloud.com/images/blogs/202303231409693.png/compress50"></p></div><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="xicon-container left meta-item-label"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="xicon-icon T-icon" style="font-size:20px;color:inherit;width:20px;height:20px;"><path d="M26 4h-4V2h-2v2h-8V2h-2v2H6c-1.1 0-2 .9-2 2v20c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 22H6V12h20v14zm0-16H6V6h4v2h2V6h8v2h2V6h4v4z" fill="currentColor"></path></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->更新时间 2024/5/20 14:47:01<!--]--></span></span></div></footer><nav class="page-nav"><p class="hasPrev hasNext inner"><span class="page-nav-item prev"> ← 搭建Vuepress项目</span><span class="page-nav-item next">使用 Element-Plus 组件库 → </span></p></nav><div class="reco-valine-wrapper" style="display:block;"><div id="valine"></div></div></div></main><!--]--><div class="page-catalog-container"><h5 class="tip">文档目录</h5><ul><!--[--><!--[--><li class="page-catalog-menu-depth_2"><a aria-current="page" href="/blogs/vuepress_2/#_1、加入主题" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="1、加入主题"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->1、加入主题<!--]--></span></span><!--[--><!--]--></a></li><!--[--><li class="page-catalog-menu-depth_3"><a aria-current="page" href="/blogs/vuepress_2/#_1-1-安装主题" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="1.1 安装主题"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->1.1 安装主题<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_3"><a aria-current="page" href="/blogs/vuepress_2/#_1-2-引入主题" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="1.2 引入主题"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->1.2 引入主题<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_3"><a aria-current="page" href="/blogs/vuepress_2/#_1-3-效果" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="1.3 效果"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->1.3 效果<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_3"><a aria-current="page" href="/blogs/vuepress_2/#_1-4-其他" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="1.4 其他"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->1.4 其他<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--]--><!--[--><li class="page-catalog-menu-depth_2"><a aria-current="page" href="/blogs/vuepress_2/#_2、使用插件" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="2、使用插件"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->2、使用插件<!--]--></span></span><!--[--><!--]--></a></li><!--[--><li class="page-catalog-menu-depth_3"><a aria-current="page" href="/blogs/vuepress_2/#_2-1-插件的引入方法-一" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="2.1 插件的引入方法(一)"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->2.1 插件的引入方法(一)<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_3"><a aria-current="page" href="/blogs/vuepress_2/#_2-2-插件的引入方法-二" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="2.2 插件的引入方法(二)"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->2.2 插件的引入方法(二)<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_3"><a aria-current="page" href="/blogs/vuepress_2/#_2-3-实例" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="2.3 实例"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->2.3 实例<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--]--><!--]--></ul></div></div></div></div><!----><!----><svg style="display:none;"><defs><!-- 横向效果 --><filter id="fe1"><feTurbulence id="animation" type="fractalNoise" baseFrequency="0.00001 9.9999999" numOctaves="1" result="warp"><animate attributeName="baseFrequency" from="0.00001 9.9999" to="0.00001 0.001" dur="2s" repeatCount="indefinite"></animate></feTurbulence><feOffset dx="-90" dy="-90" result="warpOffset"></feOffset><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warpOffset"></feDisplacementMap></filter><!-- 纵向效果 --><filter id="fe2"><feTurbulence id="animation" type="fractalNoise" baseFrequency="9.9999999 0.00001" numOctaves="1" result="warp"><animate attributeName="baseFrequency" from="9.9999999 0.00001" to="0.009 0.00001" dur="2s" repeatCount="indefinite"></animate></feTurbulence><feOffset dx="-90" dy="-90" result="warpOffset"></feOffset><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warpOffset"></feDisplacementMap></filter></defs></svg><!--]--></div>
+    <script type="module" src="/blogs/assets/app-7f713c0e.js" defer></script>
+  </body>
+</html>

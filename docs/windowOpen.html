@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.62">
+    <script>
+      (function() {
+        const userMode = localStorage.getItem('vuepress-reco-color-scheme') || 'auto';
+        const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (userMode === 'dark' || (userMode === 'auto' && systemDarkMode)) {
+          document.documentElement.classList.toggle('dark', true);
+        }
+      })();
+    </script>
+    <link rel="icon" href="https://toby607-1317049696.cos.ap-guangzhou.myqcloud.com/images/202303201032565.ico"><script type="module" async src="//at.alicdn.com/t/c/font_3933848_4wndnsa5a06.js"></script><meta name="referrer" content="never"><meta name="keywords" content="Toby的学习基地,Toby的博客,Toby,toby,博客"><meta name="description" content="这是Toby的个人博客,个人空间随便写写，日常积累。"><title>谈谈 window.open() | Toby的学习基地</title>
+    <link rel="modulepreload" href="/blogs/assets/app-7f713c0e.js"><link rel="modulepreload" href="/blogs/assets/windowOpen.html-02601a3b.js"><link rel="modulepreload" href="/blogs/assets/windowOpen.html-f4026fd6.js"><link rel="prefetch" href="/blogs/assets/index.html-6d5e9dd3.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-8c2edf06.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-f9d6c749.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-9708e883.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-23a99e15.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-b07f8737.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-ce297873.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-5d086f3a.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-a3823cc8.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-bad9c8e7.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-feb764f9.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-848a771c.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-fcfcff54.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-c4c9cace.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-9b5d889a.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-6cf06f14.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-1a88d37b.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-c8e98ed0.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-ce7da0e7.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-118d9dc4.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-330a6b6c.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-772012ff.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-d78e650e.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-d8c5cf20.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-abbf82eb.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-0eaad3ca.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-4f5b2479.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-d66d7905.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-4732d3d0.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-717beacb.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-3e1b931f.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-4e6d1bac.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-f1ef6195.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-d6ec59df.js" as="script"><link rel="prefetch" href="/blogs/assets/arrayAPI.html-00d98e82.js" as="script"><link rel="prefetch" href="/blogs/assets/ECMAScript.html-51b5aabe.js" as="script"><link rel="prefetch" href="/blogs/assets/git.html-50260250.js" as="script"><link rel="prefetch" href="/blogs/assets/higherOrderFun.html-895fdb46.js" as="script"><link rel="prefetch" href="/blogs/assets/resource.html-ccc1a504.js" as="script"><link rel="prefetch" href="/blogs/assets/v-html.html-dd0950aa.js" as="script"><link rel="prefetch" href="/blogs/assets/404.html-60b35caa.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-4811c966.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-da32e680.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-c1952521.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-1143ee14.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-d1d03cf4.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-3a272f7a.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-98808d4a.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-b3907a2b.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-658d4cca.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-eedc7c7f.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-547382e8.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-8049a9df.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-830209f4.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-66665405.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-40f6cff0.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-f646bbb4.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-e7f4f3f4.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-f3a9c743.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-0ccb60f3.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-16975a0a.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-3cbb442d.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-7dcea9b9.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-b591761d.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-7be523e8.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-68e60ba8.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-7e586504.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-aa2c0090.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-825f1427.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-b2e67e9e.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-a4bd69cb.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-1654dcc4.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-5cd78954.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-ccc56c77.js" as="script"><link rel="prefetch" href="/blogs/assets/index.html-1890b69e.js" as="script"><link rel="prefetch" href="/blogs/assets/arrayAPI.html-98caff7f.js" as="script"><link rel="prefetch" href="/blogs/assets/ECMAScript.html-0c16c33f.js" as="script"><link rel="prefetch" href="/blogs/assets/git.html-d02b6ebf.js" as="script"><link rel="prefetch" href="/blogs/assets/higherOrderFun.html-ee0aa833.js" as="script"><link rel="prefetch" href="/blogs/assets/resource.html-58258882.js" as="script"><link rel="prefetch" href="/blogs/assets/v-html.html-7cca104a.js" as="script"><link rel="prefetch" href="/blogs/assets/404.html-9e68fae6.js" as="script"><link rel="prefetch" href="/blogs/assets/reco-valine-994c873b.js" as="script"><link rel="prefetch" href="/blogs/assets/giscus-a53917f0-fbc3188d.js" as="script"><link rel="prefetch" href="/blogs/assets/CartesianProduct-83450434.js" as="script"><link rel="prefetch" href="/blogs/assets/contrastPicture-39e118ba.js" as="script"><link rel="prefetch" href="/blogs/assets/DynamicBorder-a47f5058.js" as="script"><link rel="prefetch" href="/blogs/assets/FallsFlow-7638a501.js" as="script"><link rel="prefetch" href="/blogs/assets/meteor-7f0a370a.js" as="script"><link rel="prefetch" href="/blogs/assets/ScratchTicket-80672de5.js" as="script"><link rel="prefetch" href="/blogs/assets/SvgIcon-dd265be1.js" as="script"><link rel="prefetch" href="/blogs/assets/Timeline-bb3bc772.js" as="script"><link rel="prefetch" href="/blogs/assets/Catalog-6f41b562.js" as="script"><link rel="prefetch" href="/blogs/assets/DropdownLink-e1ddfcc1.js" as="script"><link rel="prefetch" href="/blogs/assets/DropdownTransition-f51caa34.js" as="script"><link rel="prefetch" href="/blogs/assets/Link-1f06130a.js" as="script"><link rel="prefetch" href="/blogs/assets/Navbar-1d3454e0.js" as="script"><link rel="prefetch" href="/blogs/assets/NavbarDropdownNemu-2deaa980.js" as="script"><link rel="prefetch" href="/blogs/assets/NavbarLinks-c4dc7ef4.js" as="script"><link rel="prefetch" href="/blogs/assets/Pagation-3e360e70.js" as="script"><link rel="prefetch" href="/blogs/assets/PageInfo-e70fc43e.js" as="script"><link rel="prefetch" href="/blogs/assets/PageMeta-c3907c03.js" as="script"><link rel="prefetch" href="/blogs/assets/PageNav-fea0933b.js" as="script"><link rel="prefetch" href="/blogs/assets/PersonalInfo-75902a8b.js" as="script"><link rel="prefetch" href="/blogs/assets/PostItem-9595532f.js" as="script"><link rel="prefetch" href="/blogs/assets/PostList-064469f0.js" as="script"><link rel="prefetch" href="/blogs/assets/Series-0fc624ff.js" as="script"><link rel="prefetch" href="/blogs/assets/SiteBrand-7371c9af.js" as="script"><link rel="prefetch" href="/blogs/assets/ToggleDarkModeButton-13af3a39.js" as="script"><link rel="prefetch" href="/blogs/assets/ToggleSeriesButton-d2755b00.js" as="script"><link rel="prefetch" href="/blogs/assets/Categories-845349a7.js" as="script"><link rel="prefetch" href="/blogs/assets/Layout-e67719a2.js" as="script"><link rel="prefetch" href="/blogs/assets/NotFound-3536d80f.js" as="script"><link rel="prefetch" href="/blogs/assets/Post-5657b95f.js" as="script"><link rel="prefetch" href="/blogs/assets/Timeline-32e78fab.js" as="script"><link rel="prefetch" href="/blogs/assets/index-2540d693.js" as="script"><link rel="prefetch" href="/blogs/assets/index-9eb2bf8f.js" as="script"><link rel="prefetch" href="/blogs/assets/Badge-23850b08.js" as="script"><link rel="prefetch" href="/blogs/assets/CodeGroup-13927dfd.js" as="script"><link rel="prefetch" href="/blogs/assets/CodeGroupItem-b536be57.js" as="script"><link rel="prefetch" href="/blogs/assets/Tab-f48259e5.js" as="script"><link rel="prefetch" href="/blogs/assets/TabItem-8380ba8b.js" as="script"><link rel="prefetch" href="/blogs/assets/VuePreview-ddf1a566.js" as="script"><link rel="prefetch" href="/blogs/assets/Xicons-2a5c0d59.js" as="script"><link rel="prefetch" href="/blogs/assets/Banner-365f42f8.js" as="script"><link rel="prefetch" href="/blogs/assets/BannerBrand-aafbcf20.js" as="script"><link rel="prefetch" href="/blogs/assets/Blog-6e72e00b.js" as="script"><link rel="prefetch" href="/blogs/assets/Footer-5df7fc41.js" as="script"><link rel="prefetch" href="/blogs/assets/index-9815ed5b.js" as="script"><link rel="prefetch" href="/blogs/assets/MdContent-5a014ae4.js" as="script"><link rel="prefetch" href="/blogs/assets/index-fedaea64.js" as="script"><link rel="prefetch" href="/blogs/assets/index-3dd3adf6.js" as="script"><link rel="prefetch" href="/blogs/assets/Tab-b5f033cc.js" as="script"><link rel="prefetch" href="/blogs/assets/TabItem-ba0eabd1.js" as="script">
+    <link rel="preload" href="/blogs/assets/style-08090b07.css" as="style"><link rel="stylesheet" href="/blogs/assets/style-08090b07.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><div class="common-wrapper show-series show-catalog background"><div><header class="navbar-container"><!--[--><div class="site-brand nav-item"><!----><a href="/blogs/" class="site-name">Toby的学习基地</a></div><div class="nav-item navbar-links-wrapper" style=""><form class="search-box" role="search"><input type="search" autocomplete="off" spellcheck="false" value><!----></form><nav class="navbar-links"><!--[--><div class="navbar-links__item"><a href="/blogs/" class="link router-link-active" aria-label="首页"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-shouye2" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-shouye2"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->首页<!--]--></span></span><!--[--><!--]--></a></div><div class="navbar-links__item"><a href="/blogs/categories/js/1/" class="link" aria-label="分类"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-fenlei" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-fenlei"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->分类<!--]--></span></span><!--[--><!--]--></a></div><div class="navbar-links__item"><a href="/blogs/tags/fenxiang/1/" class="link" aria-label="标签"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-24gl-tags3" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-24gl-tags3"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->标签<!--]--></span></span><!--[--><!--]--></a></div><div class="navbar-links__item"><div class="dropdown-link"><button class="dropdown-link__title" type="button" aria-label="笔记"><span class="xicon-container left title"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-bianjibijishishouxie" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-bianjibijishishouxie"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->笔记<!--]--></span></span><span class="arrow down"></span></button><button class="dropdown-link--mobile__title" type="button" aria-label="笔记"><span class="title"><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-bianjibijishishouxie" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-bianjibijishishouxie"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->笔记<!--]--></span></span></span><span class="right arrow"></span></button><ul style="display:none;" class="dropdown-link__container"><!--[--><li class="dropdown-link__item"><a href="/blogs/docs/ECMAScript/" class="link" aria-label="ES 新特性"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->ES 新特性<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/higherOrderFun/" class="link" aria-label="高阶函数的使用"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->高阶函数的使用<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/v-html/" class="link" aria-label="v-html 指令"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->v-html 指令<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/windowOpen/" class="link" aria-label="谈谈 window.open()"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->谈谈 window.open()<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/arrayAPI/" class="link" aria-label="JS中数组API总结"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->JS中数组API总结<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/resource/" class="link" aria-label="资源导航"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->资源导航<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/git/" class="link" aria-label="git 常用命令大全"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->git 常用命令大全<!--]--></span></span><!--[--><!--]--></a></li><!--]--></ul></div></div><!--]--></nav><span class="xicon-container btn-toggle-dark-mode btn--dark-mode"><!-- <component
+      :style="iconStyle"
+      :is="icons[icon]"
+    /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="xicon-icon T-icon" style="font-size:20px;color:inherit;width:20px;height:20px;"><path d="M15 2h2v3h-2z" fill="currentColor"></path><path d="M27 15h3v2h-3z" fill="currentColor"></path><path d="M15 27h2v3h-2z" fill="currentColor"></path><path d="M2 15h3v2H2z" fill="currentColor"></path><path d="M5.45 6.884l1.414-1.415l2.121 2.122l-1.414 1.414z" fill="currentColor"></path><path d="M23 7.58l2.121-2.12l1.414 1.414l-2.121 2.121z" fill="currentColor"></path><path d="M23.002 24.416l1.415-1.414l2.12 2.122l-1.413 1.414z" fill="currentColor"></path><path d="M5.47 25.13L7.59 23L9 24.42l-2.12 2.12l-1.41-1.41z" fill="currentColor"></path><path d="M16 8a8 8 0 1 0 8 8a8 8 0 0 0-8-8zm0 14a6 6 0 0 1 0-12z" fill="currentColor"></path></svg><!--]--><!--]--></span><span class="xicon-container btn-toggle-menus"><!-- <component
+      :style="iconStyle"
+      :is="icons[icon]"
+    /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="xicon-icon T-icon" style="font-size:20px;color:inherit;width:20px;height:20px;"><circle cx="16" cy="8" r="2" fill="currentColor"></circle><circle cx="16" cy="16" r="2" fill="currentColor"></circle><circle cx="16" cy="24" r="2" fill="currentColor"></circle></svg><!--]--><!--]--></span></div><!--]--></header><header class="sub-navbar-container"><span class="nav-item"><div class="toggle-series-button" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div> Series </span></header><div class="mobile-menus-container"><nav class="navbar-links mobile"><!--[--><div class="navbar-links__item"><a href="/blogs/" class="link router-link-active" aria-label="首页"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-shouye2" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-shouye2"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->首页<!--]--></span></span><!--[--><!--]--></a></div><div class="navbar-links__item"><a href="/blogs/categories/js/1/" class="link" aria-label="分类"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-fenlei" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-fenlei"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->分类<!--]--></span></span><!--[--><!--]--></a></div><div class="navbar-links__item"><a href="/blogs/tags/fenxiang/1/" class="link" aria-label="标签"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-24gl-tags3" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-24gl-tags3"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->标签<!--]--></span></span><!--[--><!--]--></a></div><div class="navbar-links__item"><div class="dropdown-link"><button class="dropdown-link__title" type="button" aria-label="笔记"><span class="xicon-container left title"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-bianjibijishishouxie" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-bianjibijishishouxie"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->笔记<!--]--></span></span><span class="arrow down"></span></button><button class="dropdown-link--mobile__title" type="button" aria-label="笔记"><span class="title"><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-bianjibijishishouxie" style="
+      font-size: 18px;
+      color: inherit;
+      width: 18px;
+      height: 18px;
+    " aria-hidden="true"><use xlink:href="#T-bianjibijishishouxie"></use></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->笔记<!--]--></span></span></span><span class="right arrow"></span></button><ul style="display:none;" class="dropdown-link__container"><!--[--><li class="dropdown-link__item"><a href="/blogs/docs/ECMAScript/" class="link" aria-label="ES 新特性"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->ES 新特性<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/higherOrderFun/" class="link" aria-label="高阶函数的使用"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->高阶函数的使用<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/v-html/" class="link" aria-label="v-html 指令"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->v-html 指令<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/windowOpen/" class="link" aria-label="谈谈 window.open()"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->谈谈 window.open()<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/arrayAPI/" class="link" aria-label="JS中数组API总结"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->JS中数组API总结<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/resource/" class="link" aria-label="资源导航"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->资源导航<!--]--></span></span><!--[--><!--]--></a></li><li class="dropdown-link__item"><a href="/blogs/docs/git/" class="link" aria-label="git 常用命令大全"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->git 常用命令大全<!--]--></span></span><!--[--><!--]--></a></li><!--]--></ul></div></div><!--]--></nav><div class="appearance"><span>Appearance</span><span class="xicon-container btn-toggle-dark-mode"><!-- <component
+      :style="iconStyle"
+      :is="icons[icon]"
+    /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="xicon-icon T-icon" style="font-size:20px;color:inherit;width:20px;height:20px;"><path d="M15 2h2v3h-2z" fill="currentColor"></path><path d="M27 15h3v2h-3z" fill="currentColor"></path><path d="M15 27h2v3h-2z" fill="currentColor"></path><path d="M2 15h3v2H2z" fill="currentColor"></path><path d="M5.45 6.884l1.414-1.415l2.121 2.122l-1.414 1.414z" fill="currentColor"></path><path d="M23 7.58l2.121-2.12l1.414 1.414l-2.121 2.121z" fill="currentColor"></path><path d="M23.002 24.416l1.415-1.414l2.12 2.122l-1.413 1.414z" fill="currentColor"></path><path d="M5.47 25.13L7.59 23L9 24.42l-2.12 2.12l-1.41-1.41z" fill="currentColor"></path><path d="M16 8a8 8 0 1 0 8 8a8 8 0 0 0-8-8zm0 14a6 6 0 0 1 0-12z" fill="currentColor"></path></svg><!--]--><!--]--></span></div></div><div class="series-mask"></div><aside class="series-container"><div class="site-brand"><!----><a href="/blogs/" class="site-name">Toby的学习基地</a></div><!--[--><!--[--><section class="series-group series-item"><h5 class="series-heading active">笔记<span class="arrow down"></span></h5><ul style="display:block;"><li><!--[--><a href="/blogs/docs/ECMAScript.html" class="link series-item" aria-label="ES 新特性"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->ES 新特性<!--]--></span></span><!--[--><!--]--></a><!--]--></li><li><!--[--><a href="/blogs/docs/higherOrderFun.html" class="link series-item" aria-label="高阶函数的使用"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->高阶函数的使用<!--]--></span></span><!--[--><!--]--></a><!--]--></li><li><!--[--><a href="/blogs/docs/v-html.html" class="link series-item" aria-label="v-html 指令"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->v-html 指令<!--]--></span></span><!--[--><!--]--></a><!--]--></li><li><!--[--><a aria-current="page" href="/blogs/docs/windowOpen.html" class="router-link-active router-link-exact-active link router-link-active series-item active" aria-label="谈谈 window.open()"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->谈谈 window.open()<!--]--></span></span><!--[--><!--]--></a><!--]--></li><li><!--[--><a href="/blogs/docs/arrayAPI.html" class="link series-item" aria-label="JS中数组API总结"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->JS中数组API总结<!--]--></span></span><!--[--><!--]--></a><!--]--></li><li><!--[--><a href="/blogs/docs/resource.html" class="link series-item" aria-label="资源导航"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->资源导航<!--]--></span></span><!--[--><!--]--></a><!--]--></li><li><!--[--><a href="/blogs/docs/git.html" class="link series-item" aria-label="git 常用命令大全"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->git 常用命令大全<!--]--></span></span><!--[--><!--]--></a><!--]--></li></ul></section><!--]--><!--]--></aside><!--[--><main class="page-container background"><div class="page-card"><h1 class="page-title">谈谈 window.open()</h1><div class="page-info"><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="xicon-icon T-icon" style="font-size:18px;color:inherit;width:18px;height:18px;"><path d="M16 4a5 5 0 1 1-5 5a5 5 0 0 1 5-5m0-2a7 7 0 1 0 7 7a7 7 0 0 0-7-7z" fill="currentColor"></path><path d="M26 30h-2v-5a5 5 0 0 0-5-5h-6a5 5 0 0 0-5 5v5H6v-5a7 7 0 0 1 7-7h6a7 7 0 0 1 7 7z" fill="currentColor"></path></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->Toby<!--]--></span></span><!----><!----><!----><span class="xicon-container left"><!--[--><svg class="xicon-icon" style="width:18px;height:18px;font-size:18px;color:inherit;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 12 12"><g fill="none"><path d="M1.974 6.659a.5.5 0 0 1-.948-.317c-.01.03 0-.001 0-.001a1.633 1.633 0 0 1 .062-.162c.04-.095.099-.226.18-.381c.165-.31.422-.723.801-1.136C2.834 3.827 4.087 3 6 3c1.913 0 3.166.827 3.931 1.662a5.479 5.479 0 0 1 .98 1.517l.046.113c.003.008.013.06.023.11L11 6.5s.084.333-.342.474a.5.5 0 0 1-.632-.314v-.003l-.006-.016a3.678 3.678 0 0 0-.172-.376a4.477 4.477 0 0 0-.654-.927C8.584 4.673 7.587 4 6 4s-2.584.673-3.194 1.338a4.477 4.477 0 0 0-.795 1.225a2.209 2.209 0 0 0-.03.078l-.007.018zM6 5a2 2 0 1 0 0 4a2 2 0 0 0 0-4zM5 7a1 1 0 1 1 2 0a1 1 0 0 1-2 0z" fill="currentColor"></path></g></svg><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[--><span id="/blogs/docs/windowOpen.html" class="leancloud-visitors" data-flag-title="Your Article Title"><a class="leancloud-visitors-count" style=""></a></span><!----><!--]--></span></span></div><div class="theme-reco-default-content"><!--[--><!----><p align="center"><img width="500"></p><div><h2 id="了解-window-open" tabindex="-1"><a class="header-anchor" href="#了解-window-open" aria-hidden="true">#</a> 了解 window.open()</h2><blockquote><p>window.open() 是 JavaScript 中的一个方法，用于在浏览器中打开新的窗口或标签页。<br>它接受一个 URL 参数，指定要在新窗口中打开的网页地址。</p></blockquote><div><div>基本语法如下：</div><span style="color:red;">window.open(url, target, features, replace);</span></div><ul><li>url：表示要在新窗口中打开的网页的 URL 地址。</li><li>target（可选）：指定新窗口的目标。常见的值包括： <ul><li>blank：在新标签页中打开。</li><li>self：在当前窗口中打开（默认行为）。</li><li>parent：在父级窗口或框架中打开。</li><li>top：在最顶层的窗口中打开。</li></ul></li><li>features（可选）：一个逗号分隔的字符串，用于指定新窗口的特性，例如大小、位置、工具栏、菜单等。具体的特性值取决于浏览器的支持和实现。</li><li>replace（可选）：一个布尔值，指示新窗口是否替换当前窗口的浏览历史记录。默认为 false，不替换浏览历史记录。</li></ul><h2 id="使用场景" tabindex="-1"><a class="header-anchor" href="#使用场景" aria-hidden="true">#</a> 使用场景</h2><p>window.open() 可以应用于各种场景，包括但不限于以下几种常见用法：</p><h3 id="场景一" tabindex="-1"><a class="header-anchor" href="#场景一" aria-hidden="true">#</a> 场景一：</h3><blockquote><p>在新标签页中打开链接：可以使用 window.open() 在用户点击链接时在新标签页中打开一个链接。</p></blockquote><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">&quot;https://www.baidu.com/&quot;</span> target<span class="token operator">=</span><span class="token string">&quot;_blank&quot;</span> onclick<span class="token operator">=</span><span class="token string">&quot;event.preventDefault(); window.open(this.href, &#39;_blank&#39;);&quot;</span><span class="token operator">&gt;</span>打开链接<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="场景二" tabindex="-1"><a class="header-anchor" href="#场景二" aria-hidden="true">#</a> 场景二：</h3><blockquote><p>弹出窗口：可以使用 window.open() 创建一个自定义的弹出窗口，例如用于显示用户认证、消息通知或其他交互性内容。</p></blockquote><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token keyword">var</span> popup <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">&#39;popup.html&#39;</span><span class="token punctuation">,</span> <span class="token string">&#39;popupWindow&#39;</span><span class="token punctuation">,</span> <span class="token string">&#39;width=400,height=300&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="场景三" tabindex="-1"><a class="header-anchor" href="#场景三" aria-hidden="true">#</a> 场景三：</h3><blockquote><p>跨域通信：可以使用 window.open() 在两个不同域名的页面之间进行通信，通过在目标页面中使用 window.opener 访问源页面的上下文。</p></blockquote><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token comment">// 源页面</span>
+<span class="token keyword">var</span> popup <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">&#39;target.html&#39;</span><span class="token punctuation">,</span> <span class="token string">&#39;targetWindow&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 目标页面</span>
+window<span class="token punctuation">.</span>opener<span class="token punctuation">.</span><span class="token function">postMessage</span><span class="token punctuation">(</span><span class="token string">&#39;Hello&#39;</span><span class="token punctuation">,</span> <span class="token string">&#39;*&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="场景四" tabindex="-1"><a class="header-anchor" href="#场景四" aria-hidden="true">#</a> 场景四：</h3><blockquote><p>引导用户进行第三方认证：可以使用 window.open() 在新窗口中打开第三方认证页面，然后在认证完成后返回认证结果给原页面。</p></blockquote><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token keyword">var</span> authWindow <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">&#39;https://auth-provider.com/login&#39;</span><span class="token punctuation">,</span> <span class="token string">&#39;authWindow&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 在第三方认证页面中认证完成后执行以下代码</span>
+<span class="token keyword">var</span> authToken <span class="token operator">=</span> <span class="token string">&#39;...&#39;</span><span class="token punctuation">;</span> <span class="token comment">// 获取认证令牌</span>
+
+authWindow<span class="token punctuation">.</span>opener<span class="token punctuation">.</span><span class="token function">postMessage</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&#39;authComplete&#39;</span><span class="token punctuation">,</span> <span class="token literal-property property">token</span><span class="token operator">:</span> authToken <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">&#39;*&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="custom-container warning"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></g></svg><p class="custom-container-title">WARNING</p><p>需要注意的是，由于浏览器的安全策略，window.open() 方法在某些情况下可能受到限制。</p></div><h2 id="需要注意的问题" tabindex="-1"><a class="header-anchor" href="#需要注意的问题" aria-hidden="true">#</a> 需要注意的问题</h2><blockquote><p>以下是一些需要注意的安全策略：</p></blockquote><p>1、弹出窗口被浏览器拦截：现代浏览器通常会对弹出窗口进行拦截和阻止，特别是在未经用户交互的情况下。这是为了防止滥用和恶意弹出窗口，以保护用户的浏览体验和安全性。<br></p><p>2、广告拦截器的影响：一些广告拦截器工具和浏览器插件可能会将 window.open() 视为潜在的广告弹出窗口，并将其阻止或过滤。<br></p><p>3、弹出窗口被阻止后无法捕获：如果浏览器拦截了 window.open() 弹出的窗口，JavaScript 代码将无法捕获此事件，也无法获得对新窗口的引用。<br></p><p>4、同源策略限制：在跨域情况下，由于同源策略的限制，父页面与弹出窗口之间的通信可能受到限制。跨域的弹出窗口无法直接访问父页面的 DOM 或执行脚本。<br></p><p>5、弹出窗口的设计和用户体验：弹出窗口的使用应该谨慎，并考虑用户体验。弹出窗口可能会打断用户的浏览流程，对于移动设备或小屏幕设备，弹出窗口可能导致不良的用户体验。<br></p><p>6、安全风险：如果不正确使用 window.open()，可能会存在安全风险，例如通过弹出窗口进行钓鱼攻击、注入恶意脚本等。在使用 window.open() 时，应注意验证和过滤用户提供的数据，避免潜在的安全漏洞。<br></p><blockquote><p>为了遵守浏览器的安全策略，使用 window.open() 方法时，建议遵循以下最佳实践：</p></blockquote><ul><li>在用户交互的上下文中使用：例如，在按钮点击事件或用户操作后调用 window.open()。<br></li><li>提供有用的内容：确保弹出的窗口或标签页中提供有用的内容，而不是仅仅用于广告或欺诈目的。<br></li><li>提示用户：向用户解释为什么打开新窗口或标签页，并给出清晰的指示。<br></li><li>尊重用户的选择：如果浏览器阻止了弹出窗口，不要尝试绕过阻止机制，而是尊重用户的选择。<br></li></ul><p>总之，使用 window.open() 时请注意遵守浏览器的安全策略，以确保用户安全和良好的用户体验。</p><h2 id="讨论一个问题" tabindex="-1"><a class="header-anchor" href="#讨论一个问题" aria-hidden="true">#</a> 讨论一个问题</h2><blockquote><p>前段时间遇到个问题<br> 需求是需要调用接口，服务端返回二进制数据对象(Blob),然后我把它下载到本地。<br> 其实很简单，实现的方法也很多。先看看我写的代码：</p></blockquote><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token keyword">import</span> qs <span class="token keyword">from</span> <span class="token string">&#39;qs&#39;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> params <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 参数对象</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> apiUrl <span class="token operator">=</span> <span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">VITE_API_URL</span> <span class="token keyword">as</span> string<span class="token punctuation">;</span>
+<span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>apiUrl<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/edu/entrance/resume/export?</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>qs<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token string">&quot;newWindow&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在上述代码中，我使用了 qs 库来将参数对象转换为查询字符串。<br> 然后，我们将查询字符串附加到 API URL 中，形成完整的导出文件的 URL。<br> 最后，使用 window.open() 方法在新窗口中打开该 URL。<br></p><blockquote><p>这样写其实也没有毛病，直到发到正式环境用了个把月之后<br> 服务端突然找我说：我改接口了，现在这个接口需要请求头传 Token 。<br> 我：. . .<br> (说明一下，因为只有管理员才能触发这个下载按钮的事件，而整个项目管理员才不到三个，而且都是公司自己人。<br> 所以当初才没有带参就调用。正是因为只有我才选择使用 window.open()。<br>即省事又方便嘛！DDDD😂)</p></blockquote><p>虽然不清楚为什么上线个把月之后服务端才说要接口要传 Token。<br> 不过问题也不大，改就改呗。</p><p>秉着能省就省，用最少的代码量写最好的程序的原则。我突然有种想法：<br> 能不能在原有基础上直接加上请求头参数，方便又快捷，心里美滋滋。🤔</p><p>后来发现，是我的想法天真了。😑</p><div class="custom-container warning"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></g></svg><p class="custom-container-title">WARNING</p><p>window.open()并不提供直接设置请求头的方法</p></div><p>它主要用于在浏览器中打开新的窗口或标签页，并导航到指定的 URL 地址。</p><p>如果想在打开的新窗口或标签页中发送带有特定请求头的请求，就需要考虑使用其他方法。<br> 如使用 JavaScript 的 XMLHttpRequest 或 Fetch API 进行请求。<br> 这些方法允许我们更精细地控制请求，包括设置请求头。</p><p>唉~ 所以只能改了。<br> 最后改成了API请求</p><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token keyword">import</span> qs <span class="token keyword">from</span> <span class="token string">&#39;qs&#39;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> api <span class="token keyword">from</span> <span class="token string">&#39;@/api&#39;</span> <span class="token comment">// 封装的api</span>
+
+<span class="token keyword">const</span> params <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 参数对象</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> apiUrl <span class="token operator">=</span> <span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">VITE_API_URL</span> <span class="token keyword">as</span> string<span class="token punctuation">;</span>
+<span class="token comment">// const url = `${apiUrl}/edu/entrance/resume/export?${qs.stringify(params)}`;</span>
+<span class="token comment">// window.open(url, &quot;newWindow&quot;);</span>
+api<span class="token punctuation">.</span><span class="token function">export</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">method</span><span class="token operator">:</span><span class="token string">&#39;get&#39;</span><span class="token punctuation">,</span>params<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">blob</span><span class="token operator">:</span> Blob <span class="token operator">|</span> MediaSource</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> link <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&#39;a&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  link<span class="token punctuation">.</span>href <span class="token operator">=</span> <span class="token constant">URL</span><span class="token punctuation">.</span><span class="token function">createObjectURL</span><span class="token punctuation">(</span>blob<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  link<span class="token punctuation">.</span>download <span class="token operator">=</span> <span class="token string">&#39;导出文件.xlsx&#39;</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 添加 &lt;a&gt; 元素到页面，并触发点击事件</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>link<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  link<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 清理资源</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>link<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>因为这件事特意把window.open()重新了解了一遍，其实也不错。<!--[--><!-- 饿了么图标 --><!--[--><!-- 阿里图标 --><svg class="icon T-icon T-xin1" style="
+      font-size: 14px;
+      color: undefined;
+      width: 14px;
+      height: 14px;
+    " aria-hidden="true"><use xlink:href="#T-xin1"></use></svg><!--]--><!--]--></p></div><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="xicon-container left meta-item-label"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="xicon-icon T-icon" style="font-size:20px;color:inherit;width:20px;height:20px;"><path d="M26 4h-4V2h-2v2h-8V2h-2v2H6c-1.1 0-2 .9-2 2v20c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 22H6V12h20v14zm0-16H6V6h4v2h2V6h8v2h2V6h4v4z" fill="currentColor"></path></svg><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->更新时间 2023/6/13 18:02:48<!--]--></span></span></div></footer><nav class="page-nav"><p class="hasPrev hasNext inner"><span class="page-nav-item prev"> ← v-html 指令</span><span class="page-nav-item next">JS中数组API总结 → </span></p></nav><div class="reco-valine-wrapper" style="display:block;"><div id="valine"></div></div></div></main><!--]--><div class="page-catalog-container"><h5 class="tip">文档目录</h5><ul><!--[--><!--[--><li class="page-catalog-menu-depth_2"><a aria-current="page" href="/blogs/docs/windowOpen.html#了解-window-open" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="了解 window.open()"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->了解 window.open()<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_2"><a aria-current="page" href="/blogs/docs/windowOpen.html#使用场景" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="使用场景"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->使用场景<!--]--></span></span><!--[--><!--]--></a></li><!--[--><li class="page-catalog-menu-depth_3"><a aria-current="page" href="/blogs/docs/windowOpen.html#场景一" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="场景一："><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->场景一：<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_3"><a aria-current="page" href="/blogs/docs/windowOpen.html#场景二" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="场景二："><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->场景二：<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_3"><a aria-current="page" href="/blogs/docs/windowOpen.html#场景三" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="场景三："><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->场景三：<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_3"><a aria-current="page" href="/blogs/docs/windowOpen.html#场景四" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="场景四："><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->场景四：<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--]--><!--[--><li class="page-catalog-menu-depth_2"><a aria-current="page" href="/blogs/docs/windowOpen.html#需要注意的问题" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="需要注意的问题"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->需要注意的问题<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--[--><li class="page-catalog-menu-depth_2"><a aria-current="page" href="/blogs/docs/windowOpen.html#讨论一个问题" class="router-link-active router-link-exact-active link page-catalog-item" aria-label="讨论一个问题"><!--[--><!--]--><span class="xicon-container left"><!--[--><!-- <component
+        class="xicon-icon"
+        :style="iconStyle"
+        :is="icons[icon]"
+      /> --><!--[--><!-- 饿了么图标 --><!--[--><!-- Xicons 图标 --><!----><!--]--><!--]--><!--]--><span class="xicon-content" style="color:inherit;font-size:14px;"><!--[-->讨论一个问题<!--]--></span></span><!--[--><!--]--></a></li><!--]--><!--]--></ul></div></div></div></div><!----><!----><svg style="display:none;"><defs><!-- 横向效果 --><filter id="fe1"><feTurbulence id="animation" type="fractalNoise" baseFrequency="0.00001 9.9999999" numOctaves="1" result="warp"><animate attributeName="baseFrequency" from="0.00001 9.9999" to="0.00001 0.001" dur="2s" repeatCount="indefinite"></animate></feTurbulence><feOffset dx="-90" dy="-90" result="warpOffset"></feOffset><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warpOffset"></feDisplacementMap></filter><!-- 纵向效果 --><filter id="fe2"><feTurbulence id="animation" type="fractalNoise" baseFrequency="9.9999999 0.00001" numOctaves="1" result="warp"><animate attributeName="baseFrequency" from="9.9999999 0.00001" to="0.009 0.00001" dur="2s" repeatCount="indefinite"></animate></feTurbulence><feOffset dx="-90" dy="-90" result="warpOffset"></feOffset><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warpOffset"></feDisplacementMap></filter></defs></svg><!--]--></div>
+    <script type="module" src="/blogs/assets/app-7f713c0e.js" defer></script>
+  </body>
+</html>
